@@ -20,4 +20,4 @@ COPY composer.phar /usr/local/bin/composer
 RUN chmod 777 /usr/local/bin/composer
 RUN composer self-update
 
-ENTRYPOINT ["/bin/bash", "-c", "service apache2 restart && tail -f /dev/null"]
+ENTRYPOINT ["/bin/bash", "-c", "a2enmod rewrite && service apache2 restart && tail -f /dev/null"]
